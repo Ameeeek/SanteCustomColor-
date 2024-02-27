@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Loading from "./pages/Loading";
+import Custom from "./pages/Custom";
 import "./App.css";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Loading />
+      <Custom />
     </>
   );
 }

@@ -14,7 +14,7 @@ export default {
       },
       fontFamily:{
         'body': ['Noto Sans'],
-        'heading': ['Noto Sans']
+        'heading': ['Noto Serif']
       }
     },
   },
