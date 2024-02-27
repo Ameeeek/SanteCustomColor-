@@ -4,6 +4,14 @@ import sm from "../assets/Group4.png";
 import m from "../assets/Group5.png";
 import l from "../assets/Group6.png";
 import xl from "../assets/Group7.png";
+import base from "../assets/base.jpg";
+import alpsSeries from '../assets/crocus.png'
+import snowdrop from '../assets/snowdrop.png'
+import bedcoverCrocus from '../assets/bedcoverCrocus.png'
+import spreiCrocus from '../assets/spreiCrocus.png'
+import gulingCrocus from '../assets/gulingCrocus.png'
+import bantalCrocus from '../assets/bantalCrocus.png'
+import bedcoverPutih from '../assets/bedcoverPutih.png'
 function Custom() {
   return (
     <div className="p-12">
@@ -173,7 +181,15 @@ function Custom() {
             belanja sekarang!
           </button>
         </div>
-        <div className="out-preview w-auto h-[30rem]  bg-primary sm:w-auto sm:h-[30rem] md:h-[40rem]  md:w-auto lg:w-2/4 lg:h-[40rem]"></div>
+        <div  className="out-preview w-auto h-[30rem] relative bg-primary sm:w-auto sm:h-[30rem] md:h-[40rem]  md:w-auto lg:w-2/4 lg:h-[40rem]">
+          <img src={bedcoverCrocus} className="w-full  z-20 object-cover absolute h-full "/>        
+          <img src={spreiCrocus} className="w-full  z-20 object-cover absolute h-full "/>        
+          <img src={bedcoverPutih} className="w-full  z-20 object-cover absolute h-full "/>        
+          <img src={bantalCrocus} className="w-full  z-20 object-cover absolute h-full "/>        
+          <img src={gulingCrocus} className="w-full  z-20 object-cover absolute h-full "/>        
+          <img src={alpsSeries} className="w-full  z-10 object-cover absolute h-full "/>        
+          <img src={base} className="w-full object-cover absolute h-full "/>        
+        </div>
       </div>
     </div>
   );
