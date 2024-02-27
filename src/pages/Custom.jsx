@@ -7,7 +7,7 @@ import xl from "../assets/Group7.png";
 function Custom() {
   return (
     <div className="p-12">
-      <div className="p-8 md:p-20 bg-primary-text gap-10 w-[100%] flex flex-col lg:flex lg:flex-row lg:justify-between h-auto md:h-auto">
+      <div className="p-8 md:p-20 bg-primary-text gap-10 w-[100%] flex flex-col-reverse lg:flex lg:flex-row lg:justify-between h-auto md:h-auto">
         <div className="absolute opacity-0 md:absolute md:ml-[-2rem] md:mt-[-4rem] logo">
           <div className="md:flex md:items-center md:gap-2">
             <img src={gambar} className="w-2/12" alt="logo sante" />
@@ -18,7 +18,7 @@ function Custom() {
         </div>
         <div className="custom w-auto md:w-2/4 h-auto">
           <div className="duvet">
-            <div className="duvet-btn md:py-4 md:px-8 py-2 px-4 bg-primary flex justify-between">
+            <div className="duvet-btn md:py-4 md:px-8 py-2 px-4 md:bg-primary bg-primary flex justify-between">
               <p className="md:text-2xl text-md font-body font-black">Duvet</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,13 +118,13 @@ function Custom() {
                 Sesuaikan Ukuran:
               </p>
             </div>
-            <div className="sizes flex gap-4 justify-between">
+            <div className="sizes flex flex-wrap sm:flex-nowrap gap-4 justify-between">
               <div className="sizes-card  text-center">
                 <img
                   src={sm}
                   className=" md:opacity-100 md:relative absolute opacity-0"
                 />
-                <p className="sm:bg-red-700 text-xs sm:text-sm text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
+                <p className=" text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
                   Single
                 </p>
                 <p className="text-primary-agak-ungu font-bold font-body">
@@ -169,11 +169,11 @@ function Custom() {
               </div>
             </div>
           </div>
-          <button className="text-primary-text text-2xl font-bold font-body mt-12 py-4 px-12 bg-primary">
+          <button className="text-primary-text text-xs sm:text-sm md:text-2xl font-bold font-body mt-12 py-4 px-12 bg-primary">
             belanja sekarang!
           </button>
         </div>
-        <div className="out-preview w-auto h-[30rem]  bg-primary sm:w-auto sm:h-[30rem] md:h-[40rem] md:bg-primary-agak-ungu md:w-auto lg:bg-red-400 lg:w-2/4 lg:h-[40rem]"></div>
+        <div className="out-preview w-auto h-[30rem]  bg-primary sm:w-auto sm:h-[30rem] md:h-[40rem]  md:w-auto lg:w-2/4 lg:h-[40rem]"></div>
       </div>
     </div>
   );
