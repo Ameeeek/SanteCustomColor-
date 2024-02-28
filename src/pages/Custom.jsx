@@ -21,11 +21,18 @@ import bantalDaffodil from "../assets/bantalDaffodil.png";
 import bantalSnowdrop from "../assets/bantalSnowdrop.png";
 import bedcoverPutih from "../assets/bedcoverPutih.png";
 function Custom() {
+  let [bedcover, setBedcover] = useState(bedcoverCrocus);
+  let [gantiSprei, setGantiSprei] = useState(spreiCrocus);
+  let [gantiBantal, setGantiBantal] = useState(bantalCrocus);
+  let [gantiGuling, setGantiGuling] = useState(gulingCrocus);
   let [duvet, setDuvet] = useState(true);
   let [sprei, setSprei] = useState(true);
   let [bantal, setBantal] = useState(true);
-  // console.log(clicked);
 
+  let [pesanSprei, setPesanSprei] = useState('')
+  let [pesanDuvet, setPesanDuvet] = useState('')
+  let [pesanBantal, setPesanBantal] = useState('')
+  let [ukuran, setUkuran] = useState('')
   return (
     <div className="p-12">
       <div className="p-8 md:p-20 bg-primary-text gap-10 w-[100%] flex flex-col-reverse lg:flex lg:flex-row lg:justify-between h-auto md:h-auto">
@@ -49,6 +56,7 @@ function Custom() {
                     setDuvet(true);
                   }
                 }}
+                className="cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,16 +81,34 @@ function Custom() {
             >
               <div className="p-4 flex gap-4 text-center text-black font-body font-black ">
                 <div className="choices">
-                  <div className="h-20 w-20 crocus"></div>
-                  <p>crocus</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 crocus"
+                    onClick={() => {
+                      setPesanDuvet('bedcover crocus')
+                      setBedcover(bedcoverCrocus);
+                    }}
+                  ></div>
+                  <p className="text-xs sm:text-xl">crocus</p>
                 </div>
                 <div className="choices">
-                  <div className="h-20 w-20 daffodil"></div>
-                  <p>daffodil</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 daffodil"
+                    onClick={() => {
+                      setPesanDuvet('bedcover daffodil')
+                      setBedcover(bedcoverDaffodil);
+                    }}
+                  ></div>
+                  <p className="text-xs sm:text-xl">daffodil</p>
                 </div>
                 <div className="choices">
-                  <div className="h-20 w-20 snowdrop"></div>
-                  <p>snowdrop</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 snowdrop w-10 h-10 snowdrop"
+                    onClick={() => {
+                      setPesanDuvet('bedcover snowdrop')
+
+                      setBedcover(bedcoverSnowdrop)}}
+                  ></div>
+                  <p className="text-xs sm:text-xl">snowdrop</p>
                 </div>
               </div>
             </div>
@@ -91,6 +117,7 @@ function Custom() {
             <div className="sprei-btn md:py-4 md:px-8 py-2 px-4 md:bg-primary bg-primary flex justify-between">
               <p className="md:text-2xl text-md font-body font-black">Sprei</p>
               <a
+                className="cursor-pointer"
                 onClick={() => {
                   if (sprei) {
                     setSprei(false);
@@ -122,24 +149,42 @@ function Custom() {
             >
               <div className="p-4 flex gap-4 text-center text-black font-body font-black ">
                 <div className="choices">
-                  <div className="h-20 w-20 crocus"></div>
-                  <p>crocus</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 crocus"
+                    onClick={() => {
+                      setPesanSprei('sprei crocus')
+
+                      setGantiSprei(spreiCrocus)}}
+                  ></div>
+                  <p className="text-xs sm:text-xl">crocus</p>
                 </div>
                 <div className="choices">
-                  <div className="h-20 w-20 daffodil"></div>
-                  <p>daffodil</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 daffodil"
+                    onClick={() => {
+                      setPesanSprei('sprei daffodil')
+
+                      setGantiSprei(spreiDaffodil)}}
+                  ></div>
+                  <p className="text-xs cursor-pointer sm:text-xl">daffodil</p>
                 </div>
                 <div className="choices">
-                  <div className="h-20 w-20 snowdrop"></div>
-                  <p>snowdrop</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 snowdrop"
+                    onClick={() => {
+                      setPesanSprei('sprei snowdrop')
+                      setGantiSprei(spreiSnowdrop)}}
+                  ></div>
+                  <p className="text-xs sm:text-xl">snowdrop</p>
                 </div>
               </div>
             </div>
           </div>
           <div className={`bantal ${bantal == false ? `h-[15rem]` : ``}`}>
-            <div className="sprei-btn md:py-4 md:px-8 py-2 px-4 md:bg-primary bg-primary flex justify-between">
+            <div className="bantal-btn md:py-4 md:px-8 py-2 px-4 md:bg-primary bg-primary flex justify-between">
               <p className="md:text-2xl text-md font-body font-black">Bantal</p>
               <a
+                className="cursor-pointer"
                 onClick={() => {
                   if (bantal) {
                     setBantal(false);
@@ -169,23 +214,46 @@ function Custom() {
                 bantal == false ? "h-[11rem] opacity-100" : `hidden`
               }  `}
             >
-              <div className="p-4 flex gap-4 text-center text-black font-body font-black ">
+              <div className="p-4 flex justify-center sm:justify-normal gap-4 text-center text-black font-body font-black ">
                 <div className="choices">
-                  <div className="h-20 w-20 crocus"></div>
-                  <p>crocus</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10"
+                    onClick={() => {
+                      setPesanBantal('Bantal dan Guling Crocus')
+                      setGantiGuling(gulingCrocus);
+                      setGantiBantal(bantalCrocus);
+                    }}
+                  ></div>
+                  <p className="text-xs sm:text-xl">crocus</p>
                 </div>
                 <div className="choices">
-                  <div className="h-20 w-20 daffodil"></div>
-                  <p>daffodil</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 daffodil"
+                    onClick={() => {
+                      setPesanBantal('Bantal dan Guling Daffodil')
+
+                      setGantiGuling(gulingDaffodil);
+                      setGantiBantal(bantalDaffodil);
+                    }}
+                  ></div>
+                  <p className="text-xs sm:text-xl">daffodil</p>
                 </div>
                 <div className="choices">
-                  <div className="h-20 w-20 snowdrop"></div>
-                  <p>snowdrop</p>
+                  <div
+                    className="sm:h-20 cursor-pointer sm:w-20 crocus w-10 h-10 snowdrop"
+                    onClick={() => {
+                      setPesanBantal('Bantal dan Guling Snowdrop')
+
+                      setGantiGuling(gulingSnowdrop);
+                      setGantiBantal(bantalSnowdrop);
+                    }}
+                  ></div>
+                  <p className="text-xs sm:text-xl">snowdrop</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* <div className="sprei md:my-12 my-4">
             <div className="sprei-btn py-4 px-8 bg-primary flex justify-between">
               <p className="text-2xl font-body font-black">Sprei</p>
@@ -232,66 +300,79 @@ function Custom() {
             </div>
             <div className="sizes flex flex-wrap sm:flex-nowrap gap-4 justify-between">
               <div className="sizes-card  text-center">
-                <img
-                  src={sm}
-                  className=" md:opacity-100 md:relative absolute opacity-0"
-                />
-                <p className=" text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
-                  Single
-                </p>
-                <p className="text-primary-agak-ungu font-bold font-body">
-                  120x200
-                </p>
+                <button className="focus:ring focus:ring-violet-400">
+                  <img onClick={()=>setUkuran('ukuran single')}
+                    src={sm}
+                    className=" md:opacity-100 md:relative absolute opacity-0"
+                  />
+                  <p className=" text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
+                    Single
+                  </p>
+                  <p className="text-primary-agak-ungu font-bold font-body">
+                    120x200
+                  </p>
+                </button>
               </div>
               <div className="sizes-card text-center">
-                <img
-                  src={m}
-                  className="md:opacity-100 md:relative absolute opacity-0"
-                />
-                <p className="text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
-                  Full
-                </p>
-                <p className="text-primary-agak-ungu font-bold font-body">
-                  160x200
-                </p>
+                <button className="focus:ring focus:ring-violet-400">
+                  <img onClick={()=>setUkuran('ukuran Full')}
+                    src={m}
+                    className="md:opacity-100 md:relative absolute opacity-0"
+                  />
+                  <p className="text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
+                    Full
+                  </p>
+                  <p className="text-primary-agak-ungu font-bold font-body">
+                    160x200
+                  </p>
+                </button>
               </div>
               <div className="sizes-card text-center">
-                <img
-                  src={l}
-                  className="md:opacity-100 md:relative absolute opacity-0"
-                />
-                <p className="text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
-                  Queen size
-                </p>
-                <p className="text-primary-agak-ungu font-bold font-body">
-                  180x200
-                </p>
+                <button className="focus:ring focus:ring-violet-400">
+                  <img onClick={()=>setUkuran('ukuran Queen')}
+                    src={l}
+                    className="md:opacity-100 md:relative absolute opacity-0"
+                  />
+                  <p className="text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
+                    Queen size
+                  </p>
+                  <p className="text-primary-agak-ungu font-bold font-body">
+                    180x200
+                  </p>
+                </button>
               </div>
               <div className="sizes-card text-center">
-                <img
-                  src={xl}
-                  className="md:opacity-100 md:relative absolute opacity-0"
-                />
-                <p className="text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
-                  King size
-                </p>
-                <p className="text-primary-agak-ungu font-bold font-body ">
-                  200x200
-                </p>
+                <button className="focus:ring focus:ring-violet-400">
+                  <img onClick={()=>setUkuran('ukuran King')}
+                    src={xl}
+                    className="md:opacity-100 md:relative absolute opacity-0"
+                  />
+                  <p className="text-primary-text font-bold font-body bg-primary p-2 rounded-md block md:hidden">
+                    King size
+                  </p>
+                  <p className="text-primary-agak-ungu font-bold font-body ">
+                    200x200
+                  </p>
+                </button>
               </div>
             </div>
           </div>
           <button className="text-primary-text text-xs sm:text-sm md:text-2xl font-bold font-body mt-12 py-4 px-12 bg-primary">
-            belanja sekarang!
+            <a
+              className="font-body font-black"
+              href={`https://api.whatsapp.com/send/?phone=6287777600070&text=Halo+Admin+Elsa%2C+apakah+ketersediaan+barang+${pesanBantal}+${pesanDuvet}+${pesanDuvet}+dengan+ukuran+${ukuran}+masih+ada%3F+Terima+kasih`} target="_blank"
+            >
+              belanja sekarang!
+            </a>
           </button>
         </div>
         <div className="out-preview w-auto h-[30rem] relative bg-primary sm:w-auto sm:h-[30rem] md:h-[40rem]  md:w-auto lg:w-2/4 lg:h-[40rem]">
           <img
-            src={bedcoverDaffodil}
+            src={bedcover}
             className="w-full  z-20 object-cover absolute h-full "
           />
           <img
-            src={spreiCrocus}
+            src={gantiSprei}
             className="w-full  z-20 object-cover absolute h-full "
           />
           <img
@@ -299,11 +380,11 @@ function Custom() {
             className="w-full  z-20 object-cover absolute h-full "
           />
           <img
-            src={bantalCrocus}
+            src={gantiBantal}
             className="w-full  z-20 object-cover absolute h-full "
           />
           <img
-            src={gulingCrocus}
+            src={gantiGuling}
             className="w-full  z-20 object-cover absolute h-full "
           />
           <img
@@ -316,5 +397,4 @@ function Custom() {
     </div>
   );
 }
-
 export default Custom;
