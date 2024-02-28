@@ -29,9 +29,9 @@ function Custom() {
   let [sprei, setSprei] = useState(true);
   let [bantal, setBantal] = useState(true);
 
-  let [pesanSprei, setPesanSprei] = useState('')
-  let [pesanDuvet, setPesanDuvet] = useState('')
-  let [pesanBantal, setPesanBantal] = useState('')
+  let [pesanSprei, setPesanSprei] = useState('Sprei Crocus')
+  let [pesanDuvet, setPesanDuvet] = useState('Bedcover Crocus')
+  let [pesanBantal, setPesanBantal] = useState('Bantal dan Guling Crocus')
   let [ukuran, setUkuran] = useState('')
   return (
     <div className="p-12">
@@ -360,7 +360,7 @@ function Custom() {
           <button className="text-primary-text text-xs sm:text-sm md:text-2xl font-bold font-body mt-12 py-4 px-12 bg-primary">
             <a
               className="font-body font-black"
-              href={`https://api.whatsapp.com/send/?phone=6287777600070&text=Halo+Admin+Elsa%2C+apakah+ketersediaan+barang+${pesanBantal}+${pesanDuvet}+${pesanDuvet}+dengan+ukuran+${ukuran}+masih+ada%3F+Terima+kasih`} target="_blank"
+              href={`https://api.whatsapp.com/send/?phone=6287777600070&text=Halo+Admin+Elsa%2C+apakah+ketersediaan+barang+${pesanBantal}+${pesanDuvet}+${pesanSprei}+dengan+ukuran+${ukuran}+masih+ada%3F+Terima+kasih`} target="_blank"
             >
               belanja sekarang!
             </a>
