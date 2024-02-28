@@ -11,6 +11,7 @@ export default {
         'primary-agak-ungu': '#676AAF',
         'primary-agak-putih': '#E8E2FC',
         'primary-text': '#F8F8FF',
+        'primary-agak-merah': '#FFD3CC'
       },
       fontFamily:{
         'body': ['Noto Sans'],

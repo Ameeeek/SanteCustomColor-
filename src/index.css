@@ -23,6 +23,26 @@ a {
   width: 100%;
   animation: loding 1s ease-in-out;
 }
+.sprei, .duvet{
+}
+.duvet-menu, .sprei-menu{
+  height: 0rem;
+  opacity: 0;
+  /* display:block; */
+}
+.crocus{
+  background-color: #BBBFD8;
+}
+.daffodil{
+  background-color: #BAD7D9;
+}
+.snowdrop{
+  background-color: #B5B5B5;
+}
+.duvet, .sprei{
+  height: 4.5rem;
+}
+
 @keyframes loding {
   0% {
     width: 0%;
