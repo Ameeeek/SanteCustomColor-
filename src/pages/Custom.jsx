@@ -39,14 +39,17 @@ function Custom() {
   let [pesanBedcover, setPesanBedcover] = useState("Crocus");
   let [pesanDuvet, setPesanDuvet] = useState("Bedcover Crocus");
   let [tinggi, setTinggi] = useState("30");
-  let [set, setIsset] = useState(false);
+  let [set, setIssetUkuran] = useState(false);
+  let [tinggiSprei, setIssettinggi] = useState(false);
   let [pesanBantal, setPesanBantal] = useState("Bantal dan Guling Crocus");
   let [ukuran, setUkuran] = useState("");
+  let [count, setCount] = useState(0)
   const showSwal = () => {
     Swal.fire({
-      title: "anda belum memilih ukuran!!",
+      title: "pilih ukuran dan tingg terlebih dahulu!!",
     });
   };
+ 
   return (
     <div className="md:p-12 lg:p-12 sm:p-12 p-0">
       <div className="p-8 md:p-20 bg-primary-text gap-10 w-[100%] flex flex-col-reverse lg:flex lg:flex-row lg:justify-between h-auto md:h-auto">
@@ -140,82 +143,6 @@ function Custom() {
               </div>
             </div>
           </div>
-          {/* <div
-            className={`duvet md:my-4 lg:my-4 ${
-              duvet == false ? `h-[15rem]` : ``
-            }`}
-          >
-            <div className="duvet-btn md:py-4 md:px-8 py-2 px-4 md:bg-primary bg-primary flex justify-between">
-              <p className="md:text-2xl text-md font-body font-black text-primary-text">Bedcover</p>
-              <a
-                onClick={() => {
-                  if (duvet) {
-                    setDuvet(false);
-                  } else {
-                    setDuvet(true);
-                  }
-                }}
-                className="cursor-pointer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="md:w-10 md:h-10 w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div
-              className={`duvet-menu text-primary-text bg-primary-agak-putih ${
-                duvet == false ? "h-[11rem] opacity-100" : `hidden`
-              }  `}
-            >
-              <div className="p-4 flex gap-4 text-center text-black font-body font-semibold ">
-                <div className="choices">
-                  <div
-                    className="sm:h-20 cursor-pointer border-2 border-black  sm:w-20 crocus w-20 h-20 crocus rounded-md"
-                    onClick={() => {
-                      setPesanDuvet("bedcover crocus");
-                      setBedcover(bedcoverCrocus);
-                     setBedcoverSet('')
-                    }}
-                  ></div>
-                  <p className="text-xs sm:text-lg">crocus</p>
-                </div>
-                <div className="choices">
-                  <div
-                    className="sm:h-20 cursor-pointer border-2 border-black sm:w-20 rounded-md crocus w-20 h-20 daffodil"
-                    onClick={() => {
-                      setPesanDuvet("bedcover daffodil");
-                     setBedcoverSet('')
-                     setBedcover(bedcoverDaffodil);
-                    }}
-                  ></div>
-                  <p className="text-xs sm:text-lg">daffodil</p>
-                </div>
-                <div className="choices">
-                  <div
-                    className="sm:h-20 cursor-pointer border-2 border-black sm:w-20 rounded-md  snowdrop w-20 h-20 snowdrop"
-                    onClick={() => {
-                      setPesanDuvet("bedcover snowdrop");
-                      setBedcoverSet('')
-
-                      setBedcover(bedcoverSnowdrop);
-                    }}
-                  ></div>
-                  <p className="text-xs sm:text-lg">snowdrop</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div
             className={`sprei  md:my-4 lg:my-4  ${
               sprei == false ? `h-[19rem]` : ``
@@ -398,7 +325,8 @@ function Custom() {
                   <img
                     onClick={() => {
                       setUkuran("ukuran 120x200");
-                      setIsset(true);
+                      setIssetUkuran(true);
+                      setCount(count + 1)
                     }}
                     src={sm}
                     className=" md:opacity-100 md:relative absolute opacity-0"
@@ -417,8 +345,8 @@ function Custom() {
                     onClick={() => {
                       setBedcoverSet("");
                       setUkuran("ukuran 160x200");
-
-                      setIsset(true);
+                      setIssetUkuran(true);
+                      setCount(count + 1)
                     }}
                     src={m}
                     className="md:opacity-100 md:relative absolute opacity-0"
@@ -438,7 +366,8 @@ function Custom() {
                       setUkuran("ukuran 180x200");
                       setBedcoverSet("");
 
-                      setIsset(true);
+                      setIssetUkuran(true);
+                      setCount(count + 1)
                     }}
                     src={l}
                     className="md:opacity-100 md:relative absolute opacity-0"
@@ -458,7 +387,8 @@ function Custom() {
                       setUkuran("ukuran 200x200");
                       setBedcoverSet("");
 
-                      setIsset(true);
+                      setIssetUkuran(true);
+                      setCount(count + 1)
                     }}
                     src={xl}
                     className="md:opacity-100 md:relative absolute opacity-0"
@@ -483,7 +413,8 @@ function Custom() {
                 <button
                   onClick={() => {
                     setTinggi("30");
-                    setIsset(true);
+                    setIssettinggi(true);
+                    setCount(count + 1)
                   }}
                   className="focus:ring focus:ring-violet-400"
                 >
@@ -496,7 +427,8 @@ function Custom() {
                 <button
                   onClick={() => {
                     setTinggi("40");
-                    setIsset(true);
+                    setIssettinggi(true);
+                    setCount(count + 1)
                   }}
                   className="focus:ring focus:ring-violet-400"
                 >
@@ -512,17 +444,17 @@ function Custom() {
           <a
             className="font-body font-black"
             href={
-              set == false
+              count < 2
                 ? "#"
                 : // `https://api.whatsapp.com/send/?phone=6287777600070&text=Halo+Admin+Elsa%2C%0A%0AApakah+ketersediaan+barang+berikut+masih+ada%3F%0A%0A-+Bantal+dan+Guling+${pesanBantal}%0A-+Bedcover+${pesanDuvet}%0A-+Sprei+${pesanSprei}%0A%0ADengan+ukuran+${ukuran}.&type=phone_number&app_absent=0`
                   // `https://api.whatsapp.com/send/?phone=6287777600070&text=Halo+Admin+Elsa%2C%0A%0AApakah+ketersediaan+barang+berikut+masih+ada%3F%0A%0A-+${pesanBantal}%0A-+Bedcover ${pesanDuvet}%0A-+${pesanSprei}%0A-+Dengan ${ukuran}.%0A%0AApakah+bisa+diberikan+info+harganya%3F&type=phone_number&app_absent=0`
                   `https://api.whatsapp.com/send/?phone=6287777600070&text=Halo+Admin+Elsa%2C%0A%0AApakah+ketersediaan+barang+berikut+masih+ada%3F%0A%0A-+${pesanBantal}%0A-+Bedcover+${pesanDuvet}%0A-+${pesanSprei}%0A-+Dengan+ukuran+${ukuran}+tinggi+${tinggi}.%0A%0AApakah+bisa+diberikan+info+harganya%3F&type=phone_number&app_absent=0                  `
                 }
-            target={set == false ? "" : "_blank"}
+            target={count < 2  ? "" : "_blank"}
           >
             <button
-              onClick={set == false ? showSwal : ""}
-              className="text-primary-text text-xs sm:text-sm md:text-2xl font-bold font-body mt-12 py-4 px-12 bg-primary"
+              onClick={count < 2  ? showSwal : '' }
+              className={` text-xs sm:text-sm md:text-2xl font-bold font-body mt-12 py-4 px-12 ${count < 2 ? "text-slate-700 bg-slate-200" : "bg-primary text-white"}`}
             >
               belanja sekarang!
             </button>
